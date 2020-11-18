@@ -21,7 +21,7 @@
 .left-side
 {
      display: flex;
-     flex-direction: colunm;
+     flex-direction: column;
      width: 250px;
      background: white;
      border-top-left-radius: 8px;
@@ -38,9 +38,58 @@
 .list-container
 {
     display: flex;
+    flex-direction: column;
     padding: 42px;
     flex-grow: 1;
-    background:grey;
+    background:rgb(196, 240, 209);
      border-top-right-radius: 8px;
      border-bottom-right-radius: 8px;
+}
+
+.list-menu
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    flex-grow: 1;
+
+    .list-menu-item{
+        display: flex;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: rgb(30, 206, 97);
+        margin-bottom: 5px;
+        width: 100%;
+        &:hover{
+            background:  rgb(209, 231, 217);
+        }
+        &.is-active{
+            background-color: rgb(184, 206, 188);
+            color: rgb(30, 206, 97);
+        }
+    }
+}
+.tasks
+{
+    background:white;
+    padding: 15px 20px;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: rgb(30, 206, 97);
+
+    &:not(.completed){
+    cursor: pointer;
+    transition: box-shadow 0.3, ease, transform .3s ease ;
+        &:active{
+            transform: scale(.90);
+        }
+        &:hover{
+            box-shadow: 0 0 0 5px rgb(184, 206, 188);
+        }
+    }
+    &.completed{
+        text-decoration: line-through;
+        opacity: 0.5;
+    }
+    
 }
