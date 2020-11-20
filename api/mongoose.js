@@ -2,12 +2,8 @@
 
 const mongoose= require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/TaskManager', {useNewUrlParser: true}).then(()=>{
-    console.log('connected to the mongoDB successfully!');
-}).catch((e)=> {
-    console.log('Error while connecting to the mongoDB !');
-    console.log(e);
-});
+const mongodb = 'mongodb+srv://Joe:Joe1234@cluster0.vt3ec.mongodb.net/TaskManagement?retryWrites=true&w=majority';
+mongoose.connect(mongodb).then(()=> console.log("Connection Established")).catch(error =>console.log(error) );
 
 // to prevent depreacation and warning from mongo db
 mongoose.set('useCreateIndex', true);
