@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/TaskManager', {useNewUrlParser: true
 });
 
 // to prevent depreacation and warning from mongo db
-mongoose.set('userCreateIndex', true);
-mongoose.set('userFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 
 module.exports={mongoose};
